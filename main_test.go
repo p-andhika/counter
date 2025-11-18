@@ -33,6 +33,16 @@ func TestCountWords(t *testing.T) {
 			input: "This is a sentence.  This is another",
 			wants: 7,
 		},
+		{
+			name:  "prefixed spaces",
+			input: "   Hello world!",
+			wants: 2,
+		},
+		{
+			name:  "suffixed spaces",
+			input: "Hello world!  ",
+			wants: 2,
+		},
 	}
 
 	for _, tc := range testCases {
