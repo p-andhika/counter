@@ -1,6 +1,10 @@
-package main
+package main_test
 
-import "testing"
+import (
+	"testing"
+
+	counter "github.com/p-andhika/counter"
+)
 
 func TestCountWords(t *testing.T) {
 	testCases := []struct {
@@ -47,7 +51,7 @@ func TestCountWords(t *testing.T) {
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
-			result := CountWords([]byte(tc.input))
+			result := counter.CountWords([]byte(tc.input))
 			if result != tc.wants {
 				t.Logf("expected: %v, got: %v", tc.wants, result)
 				t.Fail()
